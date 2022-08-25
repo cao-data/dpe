@@ -132,6 +132,14 @@ export default {
     handleChartClickEvent (event) {
       if (!this.proMode) {
         if (event.seriesIndex) {
+          this.$gtag('event', 'change_juridiccion', {
+            event_category: 'graph',
+            event_label: event.data.id_jurisdiccion
+          })
+          this.$gtag('event', 'interact', {
+            event_category: 'graph',
+            event_label: 'serie_jurisdiccion'
+          })
           this.$store.dispatch('map/setSelected', this.chartOptions.series[event.seriesIndex].id_jurisdiccion)
         }
       }

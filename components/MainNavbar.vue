@@ -97,12 +97,20 @@ export default {
   },
   methods: {
     changeSelected (juridiccion) {
+      this.$gtag('event', 'change_juridiccion', {
+        event_category: 'navbar',
+        event_label: juridiccion
+      })
       this.$store.dispatch('map/setSelected', juridiccion)
     },
     changeColumns (columns) {
       this.$store.commit('system/setColumns', columns)
     },
     setChapter (chapter) {
+      this.$gtag('event', 'change_chapter', {
+        event_category: 'navbar',
+        event_label: chapter
+      })
       this.$store.commit('data/setChapter', chapter)
     },
     setProMode (val) {

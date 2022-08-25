@@ -81,10 +81,11 @@ export default {
       anonymize_ip: true, // anonymize IP
       send_page_view: false, // might be necessary to avoid duplicated page track on page reload
       linker: {
-        domains: ['guillecro.github.io/data-graphs-diego']
+        domains: ['guillecro.github.io/data-graphs-dpe']
       }
     },
-    debug: true, // enable to track in dev mode
+    // debug: process.env.NODE_ENV !== 'production', // enable to track in dev mode
+    debug: false, // enable to track in dev mode
     disableAutoPageTrack: false // disable if you don't want to track each page route with router.afterEach(...).
   }
 }

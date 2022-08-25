@@ -188,6 +188,14 @@ export default {
     handleChartClickEvent (event) {
       if (!this.proMode) {
         if (event.data && event.data && event.data.id_jurisdiccion) {
+          this.$gtag('event', 'change_juridiccion', {
+            event_category: 'graph',
+            event_label: event.data.id_jurisdiccion
+          })
+          this.$gtag('event', 'interact', {
+            event_category: 'graph',
+            event_label: 'serie_historica_nacional'
+          })
           this.$store.dispatch('map/setSelected', event.data.id_jurisdiccion)
         }
       }
