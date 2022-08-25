@@ -85,7 +85,7 @@ export default {
       }
     },
     // debug: process.env.NODE_ENV !== 'production', // enable to track in dev mode
-    debug: false, // enable to track in dev mode
+    debug: true, // enable to track in dev mode
     disableAutoPageTrack: false // disable if you don't want to track each page route with router.afterEach(...).
   }
 }
