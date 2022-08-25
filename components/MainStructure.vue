@@ -135,7 +135,7 @@ export default {
       }
     },
     setChapter (chapter) {
-      this.$gtag('event', 'change_chapter', {
+      this.$gtag.event('change_chapter', {
         event_category: 'button',
         event_label: chapter
       })

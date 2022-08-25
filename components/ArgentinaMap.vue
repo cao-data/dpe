@@ -56,7 +56,7 @@ export default {
     },
     changeSelected (jurisdiccion) {
       // this.$store.commit('map/setSelected', state)
-      this.$gtag('event', 'change_juridiccion', {
+      this.$gtag.event('change_juridiccion', {
         event_category: 'map',
         event_label: jurisdiccion
       })
