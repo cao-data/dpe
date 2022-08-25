@@ -50,15 +50,14 @@ export default {
     '@nuxtjs/style-resources',
     // https://github.com/ecomfe/vue-echarts
     '@nuxtjs/composition-api/module',
-    '@nuxtjs/google-gtag'
   ],
-
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/buefy
     'nuxt-buefy',
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/google-gtag'
   ],
   styleResources: {
     // your settings here
