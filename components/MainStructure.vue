@@ -14,33 +14,31 @@
               <i class="fas fa-exclamation-triangle fa-5x fa-sync" /> Error!
             </div>
             <div v-else-if="chapter === null" class="has-text-centered">
-              <h1 class="title is-4 has-text-primary has-text-centered is-700">
+              <!-- <h1 class="title is-4 has-text-primary has-text-centered is-700">
                 Seleccione un Tema
-              </h1>
-              <div class="buttons is-centered">
-                <button v-for="(chapterx,index) in chapters" :key="`button-chapter-${index}`" class="button is-outlined is-primary" :class="chapter == '' ? 'is-hidden' : null" @click="setChapter(chapterx)">
+              </h1> -->
+              <div class="buttons is-centered mt-3">
+                <button v-for="(chapterx,index) in chapters" :key="`button-chapter-${index}`" class="button is-outlined is-large is-primary" :class="chapter == '' ? 'is-hidden' : null" @click="setChapter(chapterx)">
                   {{ chapterx }}
                 </button>
               </div>
             </div>
             <div v-else>
-              <h1 class="subtitle is-4 has-text-dark has-text-centered">
-                Tema
-              </h1>
-              <h1 class="title is-2 has-text-primary has-text-centered is-700">
+              <h1 class="title is-1 has-text-primary has-text-centered is-700">
                 {{ chapter }}
               </h1>
               <hr>
               <div class="columns is-multiline">
-                <div v-for="graph in graphs" :key="`graph-${graph.id}`" class="column" :class="getColumns(graph)">
+                <!-- <div v-for="graph in graphs" :key="`graph-${graph.id}`" class="column" :class="getColumns(graph)">
                   <StatsContainer :graph="graph" />
-                </div>
+                </div> -->
+                <StatsContainer v-for="graph in graphs" :key="`graph-${graph.id}`" class="column" :graph="graph" :class="getColumns(graph)" />
               </div>
             </div>
           </div>
-          <hr>
+          <hr class="my-6">
           <!-- <img src="@/assets/logo.png" class="image mx-auto my-6" width="400" alt=""> -->
-          <img src="@/assets/logos.png" class="image mx-auto my-6" width="200" alt="">
+          <img src="@/assets/logos.png" class="image mx-auto my-6" width="300" alt="">
           <!-- <img src="@/assets/flyer.png" class="image" alt=""> -->
         </div>
       </div>
@@ -75,6 +73,11 @@ export default {
           } else if (k === 'cast_int') {
             graph[k] = entry[i].split(',')
           } else if (k === 'include_nacional') {
+            // console.log(k)
+            // console.log(entry[i])
+            // if entry[i] is "TRUE" save as boolean
+            graph[k] = entry[i] === 'TRUE'
+          } else if (k === 'habilitado') {
             // console.log(k)
             // console.log(entry[i])
             // if entry[i] is "TRUE" save as boolean
@@ -128,6 +131,15 @@ export default {
   },
   methods: {
     getColumns (graph) {
+      // if (graph.habilitado) {
+      //   if (graph.force_full_width) {
+      //     return 'is-12'
+      //   } else {
+      //     return `is-${this.$store.state.system.columns}`
+      //   }
+      // } else {
+      //   return 'is-hidden'
+      // }
       if (graph.force_full_width) {
         return 'is-12'
       } else {

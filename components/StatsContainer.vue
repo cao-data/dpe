@@ -1,5 +1,5 @@
 <template>
-  <div class="">
+  <div v-if="graph.habilitado">
     <div v-if="$fetchState.pending" class="chart is-flex is-justify-content-center is-align-items-center">
       <i class="fas fa-spin fa-5x fa-sync" />
     </div>
@@ -126,6 +126,9 @@ export default {
   fetchOnServer: false,
   async fetch () {
     try {
+      if (!this.graph.habilitado) {
+        return
+      }
       // console.log(app)
       // fetch with axios
       const response = await this.$axios.get(`https://sheets.googleapis.com/v4/spreadsheets/${this.googleSheetId}/values/${this.graph.id_datos}?key=${this.googleApiKey}`)

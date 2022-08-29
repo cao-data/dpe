@@ -10,7 +10,7 @@
     </template> -->
     <template #brand>
       <b-navbar-item @click="setChapter(null)">
-        <i class="fas fa-chart-pie fa-lg" />
+        <img src="@/assets/logo-mmgyd.png" alt="Logo MMGYD">
       </b-navbar-item>
     </template>
     <template #start>
@@ -74,7 +74,7 @@ export default {
     },
     getChapterLabel () {
       if (this.chapter === null) {
-        return 'Seleccione un capítulo'
+        return 'Seleccione un tema'
       } else {
         return this.chapter
       }
