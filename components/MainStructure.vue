@@ -18,7 +18,7 @@
                 Seleccione un Tema
               </h1> -->
               <div class="buttons is-centered mt-3">
-                <button v-for="(chapterx,index) in chapters" :key="`button-chapter-${index}`" class="button is-outlined is-large is-primary" :class="chapter == '' ? 'is-hidden' : null" @click="setChapter(chapterx)">
+                <button v-for="(chapterx,index) in chapters" :key="`button-chapter-${index}`" class="button is-outlined is-medium is-primary" :class="chapter == '' ? 'is-hidden' : null" @click="setChapter(chapterx)">
                   {{ chapterx }}
                 </button>
               </div>
