@@ -7,14 +7,14 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Indicadores DPE',
+    title: 'Indicadores SPE',
     htmlAttrs: {
       lang: 'es'
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Indicadores DPE - MMGYD' },
+      { hid: 'description', name: 'description', content: 'Indicadores SPE - MMGYD' },
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
